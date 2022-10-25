@@ -17,7 +17,8 @@ const Header = () => {
             
           </Nav>
           <Nav>
-          <Button variant="primary">Login</Button>{' '}
+          <Button href="login" variant="primary" className='mx-4'>Login</Button>{' '}
+          <Button href="register" variant="primary">Sign Up</Button>{' '}
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>
