@@ -57,6 +57,7 @@ const Register = () => {
             </div>
 
             <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
+            <p className="small fw-bold mt-2 pt-1 mb-2">Already have an account? <a href="login" className="link-danger">Login</a></p>
 
             <div className="text-center">
 

@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+  const {providerLogin} = useContext(AuthContext);
+
+  const googleProvider = new GoogleAuthProvider()
+
+  const handleGoogleSignIn = () =>{
+    providerLogin(googleProvider)
+    .then(result =>{
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(error => console.error(error))
+  }
   return (
     <MDBContainer fluid className="p-3 my-5 h-custom container ">
 
@@ -17,17 +31,14 @@ const Login = () => {
 
             <p className="lead fw-normal mb-0 me-3">Sign in with</p>
 
-            <MDBBtn floating size='md' tag='a' className='me-2'>
-              <MDBIcon fab icon='facebook-f' />
+            
+
+            <MDBBtn floating size='md' tag='a'  className='me-2' onClick={handleGoogleSignIn}>
+              {/* <MDBIcon fab icon='twitter' /> */}
+              google
             </MDBBtn>
 
-            <MDBBtn floating size='md' tag='a'  className='me-2'>
-              <MDBIcon fab icon='twitter' />
-            </MDBBtn>
-
-            <MDBBtn floating size='md' tag='a'  className='me-2'>
-              <MDBIcon fab icon='linkedin-in' />
-            </MDBBtn>
+           
 
           </div>
 
