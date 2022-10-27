@@ -29,7 +29,7 @@ export const routes = createBrowserRouter([
     {
         path:"/",
         element:<Main></Main>,
-    // errorElement:<ErrorPage/>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:"courses",

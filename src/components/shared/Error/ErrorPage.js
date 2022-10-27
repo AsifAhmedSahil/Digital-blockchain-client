@@ -8,8 +8,8 @@ const ErrorPage = () => {
   return (
     <>
     <Header/>
-      <div className='container '>
-        <h1 >Ops! An Error Ocurred!</h1>
+      <div className='container text-center mt-5 pt-5 text-danger '>
+        <h1  >Ops! An Error Ocurred!</h1>
         <br />
         {error && (
           <div>

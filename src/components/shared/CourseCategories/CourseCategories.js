@@ -10,25 +10,19 @@ const CourseCategories = () => {
       .then((data) => setCategories(data));
   }, []);
   return (
-    <div >
-      {/* <h3>All Categories: {categories.length}</h3> */}
+    <div>
       <div className="border ">
-        { 
-          // categories.map(category => <p p key={category.id}>
-          //     <Link to={`/courses/${category.id}`}>{category.name}</Link>
-          // </p>)
-          categories.map((category) => (
-            <div className=" p-4 ">
-              <Link
-                className="d-flex p-4 fs-5 text-center text-decoration-none border bg-dark text-white"
-                key={category.id}
-                to={`/courses/${category.id}`}
-              >
-                {category.name}
-              </Link>
-            </div>
-          ))
-        }
+        {categories.map((category) => (
+          <div className=" p-4 ">
+            <Link
+              className="d-flex p-4 fs-5 text-center text-decoration-none border bg-dark text-white"
+              key={category.id}
+              to={`/courses/${category.id}`}
+            >
+              {category.name}
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
