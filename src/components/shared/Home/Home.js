@@ -12,12 +12,7 @@ const Home = () => {
           src="https://th.bing.com/th/id/R.d42e062a51e37a8f464a4ccd591015cd?rik=0yeVvOCjowOv7w&pid=ImgRaw&r=0"
           alt="Second slide"
         />
-        <Carousel.Caption>
-        <h3 className='text-dark'>Blockchain Fundermentals </h3>
-          <p className='text-dark'>
-            Solidity is the main language for blockchain development.
-          </p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -25,13 +20,7 @@ const Home = () => {
           src="https://th.bing.com/th/id/R.8163d703d34458f4b875188f42fdf33e?rik=%2feX1uTfj1qH6DA&pid=ImgRaw&r=0"
           alt="Third slide"
         />
-        <Carousel.Caption>
-         
-          <h3 className='text-dark'>Master Solidity </h3>
-          <p className='text-dark'>
-            Solidity is the main language for blockchain development.
-          </p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -39,12 +28,7 @@ const Home = () => {
           src="https://th.bing.com/th/id/R.8124fddde642c9934487294be2e7ce38?rik=W5V3s13ztUHspQ&pid=ImgRaw&r=0"
           alt="Third slide"
         />
-        <Carousel.Caption>
-          <h3 className='text-light'>Create Your Own Blockchain </h3>
-          <p>
-            Solidity is the main language for blockchain development.
-          </p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
     </Carousel>
     </div>
