@@ -9,24 +9,40 @@ const Home = () => {
       <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          src="https://th.bing.com/th/id/R.d42e062a51e37a8f464a4ccd591015cd?rik=0yeVvOCjowOv7w&pid=ImgRaw&r=0"
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3 className='text-dark'>Blockchain Fundermentals </h3>
+          <p className='text-dark'>
+            Solidity is the main language for blockchain development.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          src="https://th.bing.com/th/id/R.8163d703d34458f4b875188f42fdf33e?rik=%2feX1uTfj1qH6DA&pid=ImgRaw&r=0"
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+         
+          <h3 className='text-dark'>Master Solidity </h3>
+          <p className='text-dark'>
+            Solidity is the main language for blockchain development.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://th.bing.com/th/id/R.8124fddde642c9934487294be2e7ce38?rik=W5V3s13ztUHspQ&pid=ImgRaw&r=0"
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3 className='text-light'>Create Your Own Blockchain </h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Solidity is the main language for blockchain development.
           </p>
         </Carousel.Caption>
       </Carousel.Item>

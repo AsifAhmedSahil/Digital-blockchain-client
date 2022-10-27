@@ -31,41 +31,33 @@ const Faq = () => {
       <MDBListGroup>
         <MDBListGroupItem tag="a" href="#" onClick={toggleCollapse1} action>
           <MDBTypography tag="h5">Question 1</MDBTypography>
-          <p className="mb-1">Short & concise version of the answer.</p>
+          <p className="mb-1">What can this app do?</p>
           <small>
             <u>Learn more</u>
           </small>
           <MDBCollapse show={collapse1}>
-            Detailed and comprehensive answer goes here. pariatur cliche
-            reprehenderit, enim eiusmod high life accusamus terry richardson ad
-            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident.
+            This is a Course selling Website, which provide blockchain related course.
+            Blockchain courses offered through Coursera enable learners to gain knowledge on foundational blockchain concepts; skill sets for designing and implementing smart contracts; methods for developing decentralized applications on the blockchain; and information about ongoing specific industry-wide blockchain frameworks.
           </MDBCollapse>
         </MDBListGroupItem>
         <MDBListGroupItem tag="a" href="#" onClick={toggleCollapse2} action>
           <MDBTypography tag="h5">Question 2</MDBTypography>
-          <p className="mb-1">Short & concise version of the answer.</p>
+          <p className="mb-1">Which Framework we provide?</p>
           <small>
             <u>Learn more</u>
           </small>
           <MDBCollapse show={collapse2}>
-            Detailed and comprehensive answer goes here. pariatur cliche
-            reprehenderit, enim eiusmod high life accusamus terry richardson ad
-            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident.
+            we caxn build this app by using react js ,express js,node js & some others.
           </MDBCollapse>
         </MDBListGroupItem>
         <MDBListGroupItem tag="a" href="#" onClick={toggleCollapse3} action>
           <MDBTypography tag="h5">Question 3</MDBTypography>
-          <p className="mb-1">Short & concise version of the answer.</p>
+          <p className="mb-1">where this app deploy?</p>
           <small>
             <u>Learn more</u>
           </small>
           <MDBCollapse show={collapse3}>
-            Detailed and comprehensive answer goes here. pariatur cliche
-            reprehenderit, enim eiusmod high life accusamus terry richardson ad
-            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident.
+            This app deploy in vercel which is backend part and the frontend part is deploy in firebase.
           </MDBCollapse>
         </MDBListGroupItem>
       </MDBListGroup>
