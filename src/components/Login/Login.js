@@ -3,38 +3,43 @@ import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } f
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AiOutlineGooglePlus } from 'react-icons/ai';
 
 const Login = () => {
   const [error,setError] = useState("")
   const {signIn} = useContext(AuthContext)
-  const navigate = useNavigate()
-  // const {providerLogin} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // const googleProvider = new GoogleAuthProvider()
+  const from = location.state?.from?.pathname || '/';
+  const {providerLogin} = useContext(AuthContext);
 
-  // const handleGoogleSignIn = () =>{
-  //   providerLogin(googleProvider)
-  //   .then(result =>{
-  //     const user = result.user;
-  //     console.log(user)
-  //   })
-  //   .catch(error => console.error(error))
-  // }
+  const googleProvider = new GoogleAuthProvider()
+
+  const handleGoogleSignIn = () =>{
+    providerLogin(googleProvider)
+    .then(result =>{
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(error => console.error(error))
+  }
 
   const handleSubmit = event=>{
     event.preventDefault();
     const form = event.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value; 
 
-    signIn(email,password)
+    signIn(email,password,name)
     .then(result =>{
       const user = result.user;
       console.log(user);
       form.reset();
       setError("")
-      navigate("/")
+      navigate(from,{replace:true})
     })
     .catch(error => {
       console.error(error)
@@ -81,7 +86,7 @@ const Login = () => {
 
     //       <div className='text-center text-md-start mt-4 pt-2'>
     //         <MDBBtn className="mb-0 px-5" size='lg'>Login</MDBBtn>
-    //         <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="register" className="link-danger">Register</a></p>
+    //         
     //       </div>
 
     //     </MDBCol>
@@ -94,10 +99,16 @@ const Login = () => {
 
     <Form className='container' onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Your name</Form.Label>
+        <Form.Control name='name' type="text" placeholder="Enter Your name" />
+        
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control name='email' type="email" placeholder="Enter email" required/>
         
       </Form.Group>
+
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
@@ -107,6 +118,11 @@ const Login = () => {
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      
+    <Button className='mx-4' onClick={handleGoogleSignIn} variant="primary" type="submit">
+       <AiOutlineGooglePlus/> Google 
+      </Button>
+      <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="/register" className="link-danger">Register</a></p>
       <Form.Text className="text-danger">
           {error}
         </Form.Text>

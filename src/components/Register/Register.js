@@ -147,6 +147,7 @@ const navigate = useNavigate()
       <Button variant="primary" type="submit">
         Register
       </Button>
+      <p className="small fw-bold mt-2 pt-1 mb-2">Already have an account? <a href="/login" className="link-danger">Login</a></p>
       <Form.Text className="text-danger">
           {error}
         </Form.Text>

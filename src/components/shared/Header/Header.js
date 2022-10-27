@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
 import { CiUser } from "react-icons/ci";
+import { MDBSwitch } from 'mdb-react-ui-kit';
 const Header = () => {
   const { user,displayName ,logout } = useContext(AuthContext);
   console.log(user);
@@ -24,6 +25,15 @@ const Header = () => {
       variant="dark"
     >
       <Container>
+      <Navbar.Brand href="/">
+            <img
+              src="https://cdn.vectorstock.com/i/1000x1000/10/01/blockchain-logo-cloud-cryptocurrency-icon-vector-20611001.webp"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />
+          </Navbar.Brand>
         <Navbar.Brand href="/">Digital Blockchain</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -62,7 +72,9 @@ const Header = () => {
               title={user?.displayName}
             >
              <CiUser/>
+             
             </Nav.Link>
+            <div className="d-flex align-items-center"> <MDBSwitch id='flexSwitchCheckDefault' label='Default switch checkbox input' /></div>
           </Nav>
         </Navbar.Collapse>
       </Container>
