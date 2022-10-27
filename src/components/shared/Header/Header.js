@@ -57,10 +57,10 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Button href="login" variant="primary" className="mx-4">
+                <Button href="login" variant="primary" className="mx-4 mb-lg-0 mb-sm-3 ">
                   Login
                 </Button>
-                <Button href="register" variant="primary">
+                <Button href="register" variant="primary" >
                   Sign Up
                 </Button>
               </>
