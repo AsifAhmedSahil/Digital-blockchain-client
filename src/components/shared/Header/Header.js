@@ -8,8 +8,9 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 import { CiUser } from "react-icons/ci";
 import { MDBSwitch } from "mdb-react-ui-kit";
+import { Image } from "react-bootstrap";
 const Header = () => {
-  const { user,  logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   console.log(user);
   const handleLogout = () => {
     logout()
@@ -69,15 +70,19 @@ const Header = () => {
               {user?.displayName}
             </Nav.Link>
 
-            <Nav.Link
-              type="button"
-              class="btn btn-secondary"
-              data-mdb-toggle="tooltip"
-              data-mdb-placement="bottom"
-              title={user?.displayName}
-            >
-              <CiUser />
-            </Nav.Link>
+            {user?.photoURL ? 
+              <Image roundedCircle style={{ width: '40px' }} className="mx-2" src={user?.photoURL}></Image>
+            : 
+              <Nav.Link
+                type="button"
+                class="btn btn-secondary"
+                data-mdb-toggle="tooltip"
+                data-mdb-placement="bottom"
+                title={user?.displayName}
+              >
+                <CiUser />
+              </Nav.Link>
+            }
             <div className="d-flex align-items-center">
               {" "}
               <MDBSwitch

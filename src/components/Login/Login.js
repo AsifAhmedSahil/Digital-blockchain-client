@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Button, Form } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineGooglePlus } from "react-icons/ai";
@@ -16,6 +16,8 @@ const Login = () => {
   const { providerLogin } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
@@ -26,6 +28,17 @@ const Login = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  const handleGithubSignIn = () =>{
+    providerLogin(githubProvider)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+      navigate(from, { replace: true });
+    })
+    .catch((error) => console.error(error));
+
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -84,6 +97,14 @@ const Login = () => {
         type="submit"
       >
         <AiOutlineGooglePlus /> Google
+      </Button>
+      <Button
+        className="mx-4"
+        onClick={handleGithubSignIn}
+        variant="primary"
+        type="submit"
+      >
+        <AiOutlineGooglePlus /> Github
       </Button>
       <p className="small fw-bold mt-2 pt-1 mb-2">
         Don't have an account?{" "}

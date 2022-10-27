@@ -34,7 +34,7 @@ export const routes = createBrowserRouter([
             {
                 path:"courses",
                 element:<Courses/>,
-                loader:()=>fetch("http://localhost:5000/course-categories"),
+                loader:()=>fetch("https://blockchain-courses-server-asifahmedsahil12-gmailcom.vercel.app/course-categories"),
 
                 children:[
                     
@@ -44,12 +44,12 @@ export const routes = createBrowserRouter([
             {
                 path:"/courses/:id",
                 element:<SinglePageCourse></SinglePageCourse>,
-                loader:({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:({params}) => fetch(`https://blockchain-courses-server-asifahmedsahil12-gmailcom.vercel.app/courses/${params.id}`)
             },
             {
                 path:"/checkout/:id",
                 element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader:({params}) => fetch(`http://localhost:5000/checkout/${params.id}`)
+                loader:({params}) => fetch(`https://blockchain-courses-server-asifahmedsahil12-gmailcom.vercel.app/checkout/${params.id}`)
             },
             {
                 path:"/",
