@@ -11,6 +11,8 @@ import Home from '../components/shared/Home/Home';
 import Main from '../layout/Main';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
+import SinglePageCourse from '../components/shared/SinglePageCourse/SinglePageCourse';
+import Checkout from '../components/shared/Checkout/Checkout';
 
 export const routes = createBrowserRouter([
     // {
@@ -30,13 +32,21 @@ export const routes = createBrowserRouter([
                 path:"courses",
                 element:<Courses/>,
                 loader:()=>fetch("http://localhost:5000/course-categories"),
+
                 children:[
-                    {
-                        path:"/courses/:id",
-                        element:<CourseDetails></CourseDetails>,
-                        loader:({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
-                    },
+                    
+
                 ]
+            },
+            {
+                path:"/courses/:id",
+                element:<SinglePageCourse></SinglePageCourse>,
+                loader:({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+            },
+            {
+                path:"/checkout/:id",
+                element:<Checkout></Checkout>,
+                loader:({params}) => fetch(`http://localhost:5000/checkout/${params.id}`)
             },
             {
                 path:"/",
