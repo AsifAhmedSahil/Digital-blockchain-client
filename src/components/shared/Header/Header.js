@@ -8,8 +8,13 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
 import { CiUser } from "react-icons/ci";
 const Header = () => {
-  const { user,displayName } = useContext(AuthContext);
+  const { user,displayName ,logout } = useContext(AuthContext);
   console.log(user);
+  const handleLogout = () =>{
+    logout()
+    .then(()=>{})
+    .catch(error => console.error(error))
+  }
   return (
     <Navbar
       collapseOnSelect
@@ -30,7 +35,7 @@ const Header = () => {
           <Nav>
             {user?.uid ? (
               <>
-                <Button href="login" variant="primary" className="mx-4">
+                <Button onClick={handleLogout} href="login" variant="light" className="mx-4">
                   Logout
                 </Button>
               </>
@@ -48,13 +53,7 @@ const Header = () => {
             <Nav.Link eventKey={2} href="#memes">
               {user?.displayName}
             </Nav.Link>
-            {/* <Nav.Link eventKey={2} href="#memes">
-              <CiUser
-                data-bs-toggle="tooltip"
-                data-bs-title="Hi! I'm tooltip"
-                data-bs-placement="bottom"
-              />
-            </Nav.Link> */}
+            
             <Nav.Link
               type="button"
               class="btn btn-secondary"

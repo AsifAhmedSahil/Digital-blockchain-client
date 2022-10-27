@@ -13,6 +13,7 @@ import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import SinglePageCourse from '../components/shared/SinglePageCourse/SinglePageCourse';
 import Checkout from '../components/shared/Checkout/Checkout';
+import ErrorPage from '../components/shared/Error/ErrorPage';
 
 export const routes = createBrowserRouter([
     // {
@@ -27,6 +28,7 @@ export const routes = createBrowserRouter([
     {
         path:"/",
         element:<Main></Main>,
+    // errorElement:<ErrorPage/>,
         children:[
             {
                 path:"courses",
